@@ -1,0 +1,33 @@
+<section
+  class="d-flex justify-content-center align-items-center flex-column gap-5 text-end"
+  style="height: 100vh;">
+  <div class="arrow-back" routerLink="../welcome">
+    <span>
+      <i-feather name="arrow-left" class="arrow-left-icon" ></i-feather>
+    </span>
+  </div>
+  <h3 style="color: #fff;">🦋 اكتب اسمك ياللي الكلام ليك </h3>
+  <div class="text-center w-50">
+    <div class="form text-end">
+      <input type="text" (input)="search$.next($any($event).target.value)"
+        class="form-control text-end mb-2"
+        [formControl]="titleFormControl" placeholder="اسم الجميل اي ؟">
+      <ng-container
+        *ngIf="titleFormControl.hasError('minlength') && (titleFormControl.dirty || titleFormControl.touched)">
+        <small class="my-3 text-muted">
+          🙆‍♂️ اكتب اسم ميقلش عن 3 حروف ياجميل
+        </small>
+      </ng-container>
+      <ng-container
+        *ngIf="titleFormControl.hasError('required') && (titleFormControl.dirty || titleFormControl.touched) ">
+        <small class="my-3 text-muted">
+          😍 لازم تكتب الاسم ياعسل
+        </small>
+      </ng-container>
+    </div>
+  </div>
+  <div class="mx-3 text-center message mt-5" *ngIf="message()">
+    <h1 class="mb-0">{{ message() }}</h1>
+  </div>
+
+</section>

@@ -1,0 +1,27 @@
+$prime: #fff;
+$second: #444;
+
+section {
+  display: block;
+  background-color: #89cff0;
+  position: relative;
+  .arrow-back{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    span {
+      color: #fff;
+      i-feather{
+        width: 40px;
+      }
+    }
+  }
+
+  .message{
+    background-color: #fff;
+    color: #555;
+    padding: 10px;
+    border-radius: 6px;
+  }
+}
+
