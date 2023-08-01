@@ -12,6 +12,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { Subject, Subscription, debounceTime, distinctUntilChanged } from 'rxjs';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { Message } from 'src/app/models/message.model';
+import database from '../../../../../database.json'
 
 @Component({
   selector: 'app-ask-me',
@@ -33,7 +35,6 @@ export class AskMeComponent implements OnInit, OnDestroy {
   found$ = this.#messageActions.foundName$
   usedNumbers: number[] = []
   message = signal<string>('')
-
 
   ngOnInit(): void {
     this.searchByTitle()
@@ -78,7 +79,6 @@ export class AskMeComponent implements OnInit, OnDestroy {
     if(this.usedNumbers.includes(randomNumber)) {
       randomNumber = Math.floor(Math.random() * (this.goodMessages().length - 1) + 1)
     }
-    this.usedNumbers.push(randomNumber)
     return this.goodMessages()[randomNumber].title
   }
 

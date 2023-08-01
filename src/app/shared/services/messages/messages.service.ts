@@ -3,8 +3,9 @@ import { Injectable } from '@angular/core';
 import { Message } from 'src/app/models/message.model';
 import { toSignal } from '@angular/core/rxjs-interop'
 import { shareReplay } from 'rxjs';
+import { environment } from 'src/environments/environment.development';
+const api = `${environment.api}`
 
-const api = ` http://localhost:3000`
 
 @Injectable({
   providedIn: 'root'

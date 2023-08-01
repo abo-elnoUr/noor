@@ -8,5 +8,6 @@ export const environment = {
     messagingSenderId: "906167305562",
     appId: "1:906167305562:web:98cadd337e1c56da4adf63",
     measurementId: "G-MYY3NDG7QK"
-  }
+  },
+  api: "https://abo-elnour.github.io/json-server/database.json"
 };
